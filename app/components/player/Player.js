@@ -94,7 +94,8 @@ class Player extends Component {
   }
 
   onEnd(){
-    this.setState({ playing: false });
+    this.goForward();
+    //this.setState({ playing: false });
   }
 
 
@@ -177,6 +178,8 @@ class Player extends Component {
             style={ styles.slider }
             trackStyle={ styles.sliderTrack }
             thumbStyle={ styles.sliderThumb }
+            playInBackground={true}
+            playWhenInactive={true}
             value={ songPercentage }/>
 
           <View style={ styles.timeInfo }>

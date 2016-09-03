@@ -5,6 +5,7 @@ import React, {
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
   ListView,
   View,
   Image,
@@ -17,7 +18,7 @@ import { Artists } from '../../mockData';
 class ArtistListItem extends Component {
   render() {
     return (
-      <TouchableHighlight onPress={ () => Actions.artistShow({ artist: this.props.artist}) } activeOpacity={ 100 } underlayColor="#ea4b54">
+      <TouchableOpacity onPress={ () => Actions.artistShow({ artist: this.props.artist}) } activeOpacity={ 100 } underlayColor="#ea4b54">
         <Image
           style={ styles.artistBg }
           resizeMode='cover'
@@ -28,7 +29,7 @@ class ArtistListItem extends Component {
           <Text style={ styles.artistSongs }>{ this.props.artist.songs.length } songs</Text>
         </View>
         </Image>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
   }
 }

@@ -6,6 +6,7 @@ import React, {
   StyleSheet,
   Image,
   TouchableHighlight,
+  TouchableOpacity,
   Text,
   View,
   ListView
@@ -71,7 +72,7 @@ class ArtistShow extends Component {
         dataSource={ songsDataSource }
         style={ styles.songsList }
         renderRow={(song, sectionId, rowId) => (
-          <TouchableHighlight onPress={ () => Actions.player({ songIndex: parseInt( rowId ), songs: this.props.artist.songs, artist: this.props.artist }) } activeOpacity={ 100 } underlayColor="rgba(246, 41, 118, 0.6)">
+          <TouchableOpacity onPress={ () => Actions.player({ songIndex: parseInt( rowId ), songs: this.props.artist.songs, artist: this.props.artist }) } activeOpacity={ 100 } underlayColor="rgba(246, 41, 118, 0.6)">
             <View key={song} style={ styles.song }>
               <Text style={ styles.songTitle }>
                 { song.title }
@@ -80,7 +81,7 @@ class ArtistShow extends Component {
                 { song.album }
               </Text>
             </View>
-          </TouchableHighlight>
+          </TouchableOpacity>
           )}/>
     );
   }
